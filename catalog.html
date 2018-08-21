@@ -23,51 +23,92 @@
       <h1 class="visually-hidden">Каталог жилья в Седоне</h1>
 
       <section class="filters">
-        <!---форма--->
+        <form class="filters-form" action="https://echo.htmlacademy.ru" method="post">
+          <fieldset class="infrastructure">
+            <legend>Инфраструктура:</legend>
+            <ul class="infrastructure__list">
+              <li class="filter-checkbox">
+                <input class="visually-hidden filter-input-checkbox" type="checkbox" name="infrastructure-pool" id="infrastructure-pool" checked>
+                <label for="infrastructure-pool">Бассейн</label>
+              </li>
+              <li class="filter-checkbox">
+                <input class="visually-hidden filter-input-checkbox" type="checkbox" name="infrastructure-parking" id="infrastructure-parking">
+                <label for="infrastructure-parking">Парковка</label>
+              </li>
+              <li class="filter-checkbox">
+                <input class="visually-hidden filter-input-checkbox" type="checkbox" name="infrastructure-wifi" id="infrastructure-wifi">
+                <label for="infrastructure-wifi">Wi-Fi</label>
+              </li>
+            </ul>
+            </fieldset>
+            <fieldset class="accommodation">
+              <legend>Тип жилья:</legend>
+              <ul class="accommodation__list">
+                <li class="filter-checkbox">
+                  <input class="visually-hidden filter-input-checkbox" type="checkbox" name="accommodation-hotel" id="accommodation-hotel" checked>
+                  <label for="accommodation-hotel">Гостиница</label>
+                </li>
+                <li class="filter-checkbox">
+                  <input class="visually-hidden filter-input-checkbox" type="checkbox" name="accommodation-motel" id="accommodation-motel" checked>
+                  <label for="accommodation-motel">Мотель</label>
+                </li>
+                <li class="filter-checkbox">
+                  <input class="visually-hidden filter-input-checkbox" type="checkbox" name="accommodation-apartment" id="accommodation-apartment" checked>
+                  <label for="accommodation-apartment">Апартаменты</label>
+                </li>
+              </ul>
+            </fieldset>
+            <button class="filters-form__button button" type="submit">Показать</button>
+          </form>
       </section>
 
       <section class="sorting">
-        <p>Найдено: 3</p>
-        <!----форма---->
+        <span class="sorting__count">Найдено: 3</span>
+        <span class="sorting__title">Сортировка:</span>
+        <ul class="sorting__list">
+          <li class="sorting__item"><a class="sorting__link sorting__link--active" href="#">По цене</a></li>
+          <li class="sorting__item"><a class="sorting__link" href="#">По типу</a></li>
+          <li class="sorting__item"><a class="sorting__link" href="#">По рейтингу</a></li>
+        </ul>
       </section>
 
-      <section class="hotels">
-        <ul class="hotels-list">
-          <li class="hotels-item">
+      <section class="result">
+        <ul class="result__list">
+          <li class="result__item">
             <article class="hotel">
-              <div class="hotels-item__image">
+              <div class="hotel__image">
                 <img src="img/hotel-1.jpg" width="135" height="90" alt="Гостиница Amara Resort & Spa">
               </div>
-              <h2 class="hotels-item__title">Amara Resort & Spa</h2>
-              <span class="hotels-item__descr">Гостиница</span>
-              <span class="hotels-item__price">От 4000 р.</span>
-              <span class="hotels-item__rating">Рейтинг: 8,5</span>
+              <h2 class="hotel__title">Amara Resort & Spa</h2>
+              <span class="hotel__descr">Гостиница</span>
+              <span class="hotel__price">От 4000 р.</span>
+              <span class="hotel__rating">Рейтинг: 8,5</span>
               <a class="button more-detailed-button" href="#">Подробнее</a>
               <a class="button book-button" href="#">Забронировать</a>
             </article>
           </li>
-          <li class="hotels-item">
+          <li class="result__item">
             <article class="hotel">
-              <div class="hotels-item__image">
+              <div class="hotel__image">
                 <img src="img/hotel-2.jpg" width="135" height="90" alt="Мотель Desert Quail Inn">
               </div>
-              <h2 class="hotels-item__title">Desert Quail Inn</h2>
-              <span class="hotels-item__descr">Мотель</span>
-              <span class="hotels-item__price">От 3000 р.</span>
-              <span class="hotels-item__rating">Рейтинг: 8,9</span>
+              <h2 class="hotel__title">Desert Quail Inn</h2>
+              <span class="hotel__descr">Мотель</span>
+              <span class="hotel__price">От 3000 р.</span>
+              <span class="hotel__rating">Рейтинг: 8,9</span>
               <a class="button more-detailed-button" href="#">Подробнее</a>
               <a class="button book-button" href="#">Забронировать</a>
             </article>
           </li>
-          <li class="hotels-item">
+          <li class="result__item">
             <article class="hotel">
-              <div class="hotels-item__image">
+              <div class="hotel__image">
                 <img src="img/hotel-3.jpg" width="135" height="90" alt="Апартаменты Villas at Poco Diablo">
               </div>
-              <h2 class="hotels-item__title">Villas at Poco Diablo</h2>
-              <span class="hotels-item__descr">Апартаменты</span>
-              <span class="hotels-item__price">От 2000 р.</span>
-              <span class="hotels-item__rating">Рейтинг: 9,2</span>
+              <h2 class="hotel__title">Villas at Poco Diablo</h2>
+              <span class="hotel__descr">Апартаменты</span>
+              <span class="hotel__price">От 2000 р.</span>
+              <span class="hotel__rating">Рейтинг: 9,2</span>
               <a class="button more-detailed-button" href="#">Подробнее</a>
               <a class="button book-button" href="#">Забронировать</a>
             </article>
