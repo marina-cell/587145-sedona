@@ -70,6 +70,14 @@ a {
   color: #766357;
 }
 
+.intro {
+  text-align: center;
+  background-color: #606164;
+  background-image: url("../img/intro-background.jpg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
 .reasons__title {
   font-size: 21px;
   text-align: center;
@@ -148,9 +156,9 @@ a {
   line-height: 21px;
   color: #ffffff;
   background-color: #40759f;
-  background-image: url("img/filter-background.jpg");
+  background-image: url("../img/filter-background.jpg");
   background-position: 0 0;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
 }
 
 .filters-form legend {
