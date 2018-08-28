@@ -3,18 +3,21 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Седона</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
   </head>
-  <body>
+  <body class="inner-page">
     <header class="main-header">
       <a class="main-header__logo" href="index.html">
         <img src="img/index-logo.svg" width="140" height="72" alt="Логотип сервиса по поиску жилья «Седона»">
       </a>
       <nav class="main-header__nav main-nav">
-        <ul class="main-nav__list site-nav">
+        <ul class="site-nav">
           <li><a href="#">Информация</a></li>
           <li><a href="#">Фото и видео</a></li>
           <li><a href="#">Карта штата</a></li>
-          <li><a>Гостиницы</a></li>
+          <li><a class="site-nav__link--current">Гостиницы</a></li>
         </ul>
       </nav>
     </header>
@@ -23,21 +26,22 @@
       <h1 class="visually-hidden">Каталог жилья в Седоне</h1>
 
       <section class="filters">
+        <h2 class="visually-hidden">Фильтры для поиска</h2>
         <form class="filters-form" action="https://echo.htmlacademy.ru" method="post">
           <fieldset class="infrastructure">
             <legend>Инфраструктура:</legend>
             <ul class="infrastructure__list">
               <li class="filter-checkbox">
-                <input class="visually-hidden filter-input-checkbox" type="checkbox" name="infrastructure-pool" id="infrastructure-pool" checked>
-                <label for="infrastructure-pool">Бассейн</label>
+                <input class="visually-hidden filter-checkbox" type="checkbox" name="pool" id="infrastructure-pool-id" checked>
+                <label for="infrastructure-pool-id">Бассейн</label>
               </li>
               <li class="filter-checkbox">
-                <input class="visually-hidden filter-input-checkbox" type="checkbox" name="infrastructure-parking" id="infrastructure-parking">
-                <label for="infrastructure-parking">Парковка</label>
+                <input class="visually-hidden filter-checkbox" type="checkbox" name="parking" id="infrastructure-parking-id">
+                <label for="infrastructure-parking-id">Парковка</label>
               </li>
               <li class="filter-checkbox">
-                <input class="visually-hidden filter-input-checkbox" type="checkbox" name="infrastructure-wifi" id="infrastructure-wifi">
-                <label for="infrastructure-wifi">Wi-Fi</label>
+                <input class="visually-hidden filter-checkbox" type="checkbox" name="wifi" id="infrastructure-wifi-id">
+                <label for="infrastructure-wifi-id">Wi-Fi</label>
               </li>
             </ul>
             </fieldset>
@@ -45,16 +49,16 @@
               <legend>Тип жилья:</legend>
               <ul class="accommodation__list">
                 <li class="filter-checkbox">
-                  <input class="visually-hidden filter-input-checkbox" type="checkbox" name="accommodation-hotel" id="accommodation-hotel" checked>
-                  <label for="accommodation-hotel">Гостиница</label>
+                  <input class="visually-hidden filter-checkbox" type="checkbox" name="hotel" id="accommodation-hotel-id" checked>
+                  <label for="accommodation-hotel-id">Гостиница</label>
                 </li>
                 <li class="filter-checkbox">
-                  <input class="visually-hidden filter-input-checkbox" type="checkbox" name="accommodation-motel" id="accommodation-motel" checked>
-                  <label for="accommodation-motel">Мотель</label>
+                  <input class="visually-hidden filter-checkbox" type="checkbox" name="motel" id="accommodation-motel-id" checked>
+                  <label for="accommodation-motel-id">Мотель</label>
                 </li>
                 <li class="filter-checkbox">
-                  <input class="visually-hidden filter-input-checkbox" type="checkbox" name="accommodation-apartment" id="accommodation-apartment" checked>
-                  <label for="accommodation-apartment">Апартаменты</label>
+                  <input class="visually-hidden filter-checkbox" type="checkbox" name="apartment" id="accommodation-apartment-id" checked>
+                  <label for="accommodation-apartment-id">Апартаменты</label>
                 </li>
               </ul>
             </fieldset>
@@ -63,25 +67,29 @@
       </section>
 
       <section class="sorting">
+        <h2 class="visually-hidden">Сортировка результатов поиска</h2>
         <span class="sorting__count">Найдено: 3</span>
         <span class="sorting__title">Сортировка:</span>
         <ul class="sorting__list">
-          <li class="sorting__item"><a class="sorting__link sorting__link--active" href="#">По цене</a></li>
-          <li class="sorting__item"><a class="sorting__link" href="#">По типу</a></li>
-          <li class="sorting__item"><a class="sorting__link" href="#">По рейтингу</a></li>
+          <li><a class="sorting__link sorting__link--active" href="#">По цене</a></li>
+          <li><a class="sorting__link" href="#">По типу</a></li>
+          <li><a class="sorting__link" href="#">По рейтингу</a></li>
         </ul>
       </section>
 
       <section class="result">
+        <h2 class="visually-hidden">Результаты поиска</h2>
         <ul class="result__list">
           <li class="result__item">
             <article class="hotel">
               <div class="hotel__image">
                 <img src="img/hotel-1.jpg" width="135" height="90" alt="Гостиница Amara Resort & Spa">
               </div>
-              <h2 class="hotel__title">Amara Resort & Spa</h2>
-              <span class="hotel__descr">Гостиница</span>
-              <span class="hotel__price">От 4000 р.</span>
+              <h3 class="hotel__title">Amara Resort & Spa</h3>
+              <p class="hotel__descr">
+                <span class="hotel__type">Гостиница</span>
+                <span class="hotel__price">От 4000 р.</span>
+              </p>
               <span class="hotel__rating">Рейтинг: 8,5</span>
               <a class="button more-detailed-button" href="#">Подробнее</a>
               <a class="button book-button" href="#">Забронировать</a>
@@ -92,9 +100,11 @@
               <div class="hotel__image">
                 <img src="img/hotel-2.jpg" width="135" height="90" alt="Мотель Desert Quail Inn">
               </div>
-              <h2 class="hotel__title">Desert Quail Inn</h2>
-              <span class="hotel__descr">Мотель</span>
-              <span class="hotel__price">От 3000 р.</span>
+              <h3 class="hotel__title">Desert Quail Inn</h3>
+              <p class="hotel__descr">
+                <span class="hotel__type">Мотель</span>
+                <span class="hotel__price">От 3000 р.</span>
+              </p>
               <span class="hotel__rating">Рейтинг: 8,9</span>
               <a class="button more-detailed-button" href="#">Подробнее</a>
               <a class="button book-button" href="#">Забронировать</a>
@@ -105,9 +115,11 @@
               <div class="hotel__image">
                 <img src="img/hotel-3.jpg" width="135" height="90" alt="Апартаменты Villas at Poco Diablo">
               </div>
-              <h2 class="hotel__title">Villas at Poco Diablo</h2>
-              <span class="hotel__descr">Апартаменты</span>
-              <span class="hotel__price">От 2000 р.</span>
+              <h3 class="hotel__title">Villas at Poco Diablo</h3>
+              <p class="hotel__descr">
+                <span class="hotel__descr">Апартаменты</span>
+                <span class="hotel__price">От 2000 р.</span>
+              </p>
               <span class="hotel__rating">Рейтинг: 9,2</span>
               <a class="button more-detailed-button" href="#">Подробнее</a>
               <a class="button book-button" href="#">Забронировать</a>
@@ -119,7 +131,7 @@
 
     <footer class="main-footer">
       <p class="hashtag">#visitsedona</p>
-      <ul class="footer-social">
+      <ul class="footer-social-list">
         <li><a class="social-button" href="#">Twitter</a></li>
         <li><a class="social-button" href="#">Facebook</a></li>
         <li><a class="social-button" href="#">YouTube</a></li>
