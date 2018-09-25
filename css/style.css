@@ -14,6 +14,7 @@ body {
   width: 1200px;
   margin: 0 auto;
   background-color: #ffffff;
+  box-shadow: 0 10px 30px 0 rgba(55, 55, 55, 0.3);
 }
 
 .inner-page {
@@ -260,6 +261,7 @@ input[type="radio"].visually-hidden {
 
 .reasons__list {
   display: flex;
+  flex-wrap: wrap;
   order: 2;
   margin: 0;
   padding: 0;
@@ -297,6 +299,7 @@ input[type="radio"].visually-hidden {
 
 .reasons__recom-list {
   display: flex;
+  flex-wrap: wrap;
   order: 1;
   padding: 0;
   margin: 0;
@@ -327,18 +330,65 @@ input[type="radio"].visually-hidden {
 }
 
 .search__button {
+  position: relative;
   box-sizing: border-box;
   width: 568px;
   padding: 30px;
   color: #ffffff;
+  z-index: 101;
 }
 
 .search__button-wrapper {
   position: relative;
 }
 
+@keyframes appearance {
+  0% {
+    transform: translateY(-80px);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes disappearance {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
 .search__modal {
   position: absolute;
+  z-index: 100;
   top: 86px;
   left: 316px;
   box-sizing: border-box;
@@ -347,6 +397,19 @@ input[type="radio"].visually-hidden {
   color: #000000;
   background-color: #ffffff;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.7);
+  animation: appearance 0.6s;
+}
+
+.modal-hide {
+  animation: disappearance 0.6s forwards;
+}
+
+.default-hide {
+  display: none;
+}
+
+.modal-error {
+  animation: shake 0.6s;
 }
 
 .search-form fieldset,
@@ -681,6 +744,7 @@ input[type="radio"].visually-hidden {
 
 .sorting {
   display: flex;
+  flex-wrap: wrap;
   padding: 33px 73px 25px 73px;
 }
 
@@ -822,6 +886,10 @@ input[type="radio"].visually-hidden {
   background-color: #f2f2f2;
 }
 
+.hotel__text {
+  max-width: 750px;
+}
+
 .hotel__title {
   margin: 0;
   margin-bottom: 7px;
@@ -878,10 +946,27 @@ input[type="radio"].visually-hidden {
   background-color: #5496bd;
 }
 
+.map-wrapper {
+  position: relative;
+}
+
+.map-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: none;
+}
+
 .main-footer {
   position: relative;
   display: flex;
-  padding: 37px 100px 35px 131px;
+  padding: 37px 100px 40px 131px;
   margin-top: -130px;
   background-color: rgba(254, 254, 254, 0.9);
   z-index: 5;
