@@ -446,7 +446,7 @@ input[type="radio"].visually-hidden {
   cursor: pointer;
 }
 
-.passengers .change-number-button-minus:first-child {
+.passengers .change-number-button-minus:first-of-type {
   margin-left: 38px;
 }
 
