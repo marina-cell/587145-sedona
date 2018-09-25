@@ -117,20 +117,22 @@ input[type="radio"].visually-hidden {
   text-align: right;
 }
 
-.site-nav a {
+.site-nav__link {
   color: #000000;
 }
 
-.site-nav a:hover,
-.site-nav a:focus {
+.site-nav__link:hover,
+.site-nav__link:focus {
   color: #81b3d2;
 }
 
-.site-nav a:active {
+.site-nav__link:active {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.site-nav__link--current {
+.site-nav__link--current,
+.site-nav__link--current:hover,
+.site-nav__link--current:focus {
   color: #766357;
 }
 
@@ -712,6 +714,16 @@ input[type="radio"].visually-hidden {
   border-bottom: 1px dotted #81b3d2;
 }
 
+.sorting__link:hover,
+.sorting__link:focus {
+  color: #81b3d2;
+}
+
+.sorting__link:active {
+  color: #000000;
+  border-bottom: none;
+}
+
 .sorting__link--active {
   color: #81b3d2;
   border-bottom: none;
@@ -725,7 +737,13 @@ input[type="radio"].visually-hidden {
   margin-left: 7px;
 }
 
-.sorting__button--current path {
+.sorting__button:hover path,
+.sorting__button:focus path {
+  fill: #231f20;
+}
+
+.sorting__button--current path,
+.sorting__button:active path {
   fill: #81b3d2;
 }
 
@@ -811,6 +829,19 @@ input[type="radio"].visually-hidden {
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
+}
+
+.hotel__title a {
+  color: #000000;
+}
+
+.hotel__title a:hover,
+.hotel__title a:focus {
+  color: #81b3d2;
+}
+
+.hotel__title a:active {
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .hotel__descr {
